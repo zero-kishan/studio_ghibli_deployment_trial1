@@ -1,0 +1,80 @@
+.character_banner{
+  display:inline-block;
+  width: 220px;
+  height: 300px;
+  border-radius: 0px;
+}
+
+.character_p_c{
+  display:inline-block;
+  margin: 20px 30px 10px 42px;
+  font-size: 10px;
+  /* font-family: "Lucida Console", "Courier New", monospace; */
+}
+
+/* .backgroundWall{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  width: 100%;
+  height: 550px;
+} */
+.bottomCar{
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right; */
+  width: 100%;
+  height: 200px;
+}
+
+
+.character_film{
+  display:inline-block;
+  width: 150px;
+  height: 220px;
+  transition: transform .4s;
+  border-radius: 10px;
+  box-shadow: none;
+  border: 3px solid #111;
+  transition:  transform .2s;
+}
+
+
+
+.character_film:hover{
+  box-shadow: 0 0 25px  #111;
+  transform: scale(1.3);
+  border: 3px solid #1daeed;
+  transform: translate(0, -10px);
+}
+
+.card-img{
+  padding: 5px 5px 5px 10px;
+
+}
+.card-img:hover{
+  /* box-shadow: 4px 4px  #1daeed; */
+  box-shadow: 0 0 25px  #111;
+  transform: scale(1.1);
+}
+
+.movie_page_navigation a h6{
+  color:#cccdb4 ;
+}
+
+.main {
+  margin-left: 222px; /* Same as the width of the sidenav */
+  /* font-size: 28px; Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+.row{
+  font-size: 20px;
+  color: aliceblue;
+  font-family: "Lucida Console", "Courier New", monospace;
+
+}
+
+
+
+
+

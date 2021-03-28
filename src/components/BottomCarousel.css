@@ -1,0 +1,11 @@
+
+.d-block {
+  height: 200px;
+}
+
+.main {
+  margin-left: 222px;
+  margin-bottom: 10px; /* Same as the width of the sidenav */
+   /* Increased text to enable scrolling */
+  padding: 10px 10px;
+}

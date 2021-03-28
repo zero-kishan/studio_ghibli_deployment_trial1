@@ -10,7 +10,7 @@ import Movie from './container/Movie';
 import Character from './container/Character';
 import Location from './container/Location';
 import Vehicle from './container/Vehicle';
-import Wishlist from './container/Wishlist';
+import MyGhibliUniverse from './container/MyGhibliUniverse';
 import SideBar from './components/SideBar';
 import Shopping from './container/Shopping'
 
@@ -41,7 +41,7 @@ const Routing = () => {
           <Route path="/characters/:id" component={Character}/>
           <Route path="/locations/:id" component={Location}/>
           <Route path="/vehicles/:id" component={Vehicle}/>
-          <Route path="/wishlist" component={Wishlist}/>
+          <Route path="/myghibliuniverse" component={MyGhibliUniverse}/>
           <Route path="/shopping" component={Shopping}/>
           <Route path="/bluray/:id" component={Bluray}/>
           <Route path="/dvd/:id" component={Dvd}/>

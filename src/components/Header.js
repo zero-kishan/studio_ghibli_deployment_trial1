@@ -55,7 +55,7 @@ class Header extends Component {
 
             <li className="nav-item nav-item active" >
               <HashLink className="nav-link" id="home-link"
-                to="/wishlist#top"
+                to="/myghibliuniverse#top"
               >My Ghibli Universe
                 <span className="sr-only">(current)</span>
               </HashLink>

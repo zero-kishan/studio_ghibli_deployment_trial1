@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WatchlistDisplay from '../components/WatchlistDisplay';
-import { wishlist } from '../actions/actionfile';
+import FollowingDisplay from '../components/FollowingDisplay';
+import { following } from '../actions/actionfile';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
@@ -8,7 +8,7 @@ import './Unimain.css'
 //import axios from 'axios';
 //const wishlist_url = "https://ghibli-json-server.herokuapp.com/wishlist";
 
-class Watchlist extends Component {
+class Following extends Component {
     // constructor() {
     //     super()
 
@@ -18,7 +18,7 @@ class Watchlist extends Component {
     // }
     componentDidMount() {
         //const response = await axios.get(wishlist_url);
-        this.props.dispatch(wishlist());
+        this.props.dispatch(following());
 
 
         //this.setState({ wishlist: filtering });
@@ -32,15 +32,15 @@ class Watchlist extends Component {
             this.props.history.push('/')
         }
         let filtering='';
-        if (this.props.wishlist) {
-            filtering = this.props.wishlist.filter((item) => {
+        if (this.props.following) {
+            filtering = this.props.following.filter((item) => {
                 return sessionStorage.getItem('email') === item.email
             })
         }
         return (
             <>
             <div className="container">
-                <WatchlistDisplay wishlist={filtering} />
+                <FollowingDisplay following={filtering} />
             </div></>
         )
     }
@@ -48,11 +48,11 @@ class Watchlist extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state.wishlist)
+    console.log(state.following)
     return {
-        wishlist: state.wishlist
+        following: state.following
     }
 
 }
 
-export default connect(mapStateToProps)(Watchlist);
+export default connect(mapStateToProps)(Following);

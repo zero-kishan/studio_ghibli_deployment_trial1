@@ -18,7 +18,7 @@ class DvdComponent extends Component{
       this.props.dispatch(shopping_wishlist_add({
         id: Math.floor(Math.random() * 10000),
         name: this.props.dvddetails.name,
-        shopping_id: this.props.dvddetails.id,
+        shopping_id: 'dvd/'+this.props.dvddetails.id,
         shopping_image: this.props.dvddetails.image_url,
         email: sessionStorage.getItem('email'),
         username: sessionStorage.getItem('name'),
@@ -53,7 +53,7 @@ class DvdComponent extends Component{
               <div className="col-xs-5 col-sm-6 col-lg-3">
                 <img className='location_banner' src={dvddetails.image_url} alt='Dvd_poster' style={{ border: '3px solid #1daeed ' }}></img></div>
                 <div className="col-xs-7 col-sm-6 col-lg-9" style={{ marginTop: '20px' }}>
-                  <h2>{dvddetails.name} DVD</h2><small>(A STUDIO GHIBLI PRODUCT)</small><br/><br/><br/><a href={dvddetails.merch_link} className="btn btn-primary">Buy Now</a><br /> <br />{object}</div>
+                  <h2>{dvddetails.name}</h2><small>(A STUDIO GHIBLI PRODUCT)</small><br/><br/><br/><a href={dvddetails.merch_link} className="btn btn-primary">Buy Now</a><br /> <br />{object}</div>
                 </div>
               
             

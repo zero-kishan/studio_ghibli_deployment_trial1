@@ -86,7 +86,6 @@ class GoogleLoginN extends React.Component {
         {/* !this.state.loggedIn && */}
         <GoogleLogin
           clientId="827339527611-lkbcb6n0msqjpbrhv0ldqskfqkvk6b2h.apps.googleusercontent.com"
-          
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}

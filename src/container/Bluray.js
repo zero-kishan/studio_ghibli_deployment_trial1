@@ -29,7 +29,6 @@ class Bluray extends Component {
   }
   render() {
     console.log(this.state, 'inside render')
-
     let in_wishlist = false;
     let shopping_wishlist = {};
     console.log(this.props.shopping_wishlist, 'inside render')
@@ -50,8 +49,6 @@ class Bluray extends Component {
       <SideBar/>
       
         <BlurayComponent blu_raydetails={this.state.blu_ray} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
-
-
 
       </>
     )

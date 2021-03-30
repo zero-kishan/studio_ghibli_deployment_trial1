@@ -103,22 +103,52 @@ export function shopping_wishlist_delete(wishlist){
 
 
 
-export function galleryNews(){
-    const output = fetch(`${base_url}/galleries`,{method:'GET'})
-    .then((data) =>  data.json())
-
-    return {
-        type:'GALLERY_NEWS',
-        payload: output
-    }
-}
-
-export function selectedNews(id){
-    const output = fetch(`${base_url}/articles?id=${id}`,{method:'GET'})
+export function following(){
+    const output = fetch(`${base_url}/following`,{method:'GET'})
     .then((data) => data.json())
 
     return{
-        type:'SELECTED_NEWS',
+        type:'FOLLOWING',
         payload:output
+    }
+}
+
+export function following_add(obj){
+    fetch(`${base_url}/following`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify(obj)
+        
+    })
+    .then((data) => data.json())
+    const output = fetch(`${base_url}/following`,{method:'GET'})
+    .then((data) => data.json())
+    console.log(output,'inside action file')
+    return{
+        type:'FOLLOWING_ADD',
+        payload:obj
+    }
+}
+
+export function following_delete(wishlist){
+    fetch(`${base_url}/following/${wishlist.id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json'
+        },
+
+
+    })
+    .then((data) => data.json())
+    // const output = fetch(`${base_url}/wishlist/${wishlist.id}`,{method:'GET'})
+    // .then((data) => data.json())
+    console.log(wishlist,'inside action file')
+    return{
+        type:'FOLLOWING_DELETE',
+        payload:wishlist
     }
 }

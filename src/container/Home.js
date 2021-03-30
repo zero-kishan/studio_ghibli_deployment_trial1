@@ -5,6 +5,7 @@ import HomeLocationGridDisplay from '../components/HomeLocationGridDisplay';
 import HomeVehiclesGridDisplay from '../components/HomeVehiclesGridDisplay'
 import HomeTVGridDisplay from '../components/HomeTVGridDisplay';
 import HomeStageProductionGridDisplay from '../components/HomeStageProductionGridDisplay';
+import HomeExhibition from '../components/HomeExhibition'
 import HomeTopDisplay from '../components/HomeTopDisplay';
 import SearchBar from '../components/SearchBar';
 import Header from '../components/Header';
@@ -128,10 +129,10 @@ class Home extends Component {
                 </center>
                 <HomeTVGridDisplay televisionslist={this.state.televisions_filtered} />
 
-                <center>
-                    <SearchBar category='StageProduction' filter={(input) => { this.changeHandler(input) }} />
-                </center>
+                
                 <HomeStageProductionGridDisplay stageproductionslist={this.state.stageproductions_filtered} />
+
+                <HomeExhibition />
             </>
         )
     }

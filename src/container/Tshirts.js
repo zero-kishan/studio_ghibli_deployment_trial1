@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { shopping_wishlist } from '../actions/actionfile';
 import axios from 'axios';
 //import Logout from './Logout';
 import TshirtComponent from '../components/TshirtComponent';
@@ -22,15 +23,30 @@ class Tshirt extends Component {
   async getTshirtDetails() {
     const { data: resp } = await axios.get(`${tshirt_url}/${this.props.match.params.id}`)
     this.setState({ tshirt: resp })
+    await this.props.dispatch(shopping_wishlist())
+    console.log(this.props.shopping_wishlist)
   }
   render() {
     console.log(this.state, 'inside render')
+    let in_wishlist = false;
+    let shopping_wishlist = {};
+    console.log(this.props.shopping_wishlist, 'inside render')
+    if (this.props.shopping_wishlist) {
+      this.props.shopping_wishlist.map((item) => {
+        if (item.email === sessionStorage.getItem('email') && item.name === this.state.tshirt.name) {
+          in_wishlist = true;
+          shopping_wishlist = item;
+        }
+      })
+    }
+    console.log(in_wishlist, 'inside render');
+    console.log(shopping_wishlist, 'inside render');
     return (
       <>
       <Header />
       <SideBar/>
       
-        <TshirtComponent tshirtdetails={this.state.tshirt} />
+        <TshirtComponent tshirtdetails={this.state.tshirt} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
 
 
 
@@ -42,6 +58,19 @@ class Tshirt extends Component {
     this.getTshirtDetails()
   }
 
+  
+
+
+
 }
 
-export default Tshirt;
+function mapStateToProps(state) {
+  console.log(state.shopping_wishlist)
+  return {
+    shopping_wishlist: state.shopping_wishlist
+  }
+
+}
+
+
+export default connect(mapStateToProps)(Tshirt);

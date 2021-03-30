@@ -5,7 +5,6 @@ import { shopping_wishlist_add, shopping_wishlist_delete } from '../actions/acti
 // import BottomCarousel from './BottomCarousel'
 //import { HashLink } from 'react-router-hash-link';
 
-
 class BlurayComponent extends Component {
 
   handleSubmit = () => {
@@ -18,7 +17,7 @@ class BlurayComponent extends Component {
       this.props.dispatch(shopping_wishlist_add({
         id: Math.floor(Math.random() * 10000),
         name: this.props.blu_raydetails.name,
-        shopping_id: this.props.blu_raydetails.id,
+        shopping_id: 'bluray/'+this.props.blu_raydetails.id,
         shopping_image: this.props.blu_raydetails.image_url,
         email: sessionStorage.getItem('email'),
         username: sessionStorage.getItem('name'),
@@ -59,9 +58,6 @@ class BlurayComponent extends Component {
         </>
       )
     }
-
-
-
 
     // console.log("props")
   }

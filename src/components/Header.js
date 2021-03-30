@@ -84,7 +84,13 @@ class Header extends Component {
                   </li>
             }
 
-
+            <li className="nav-item nav-item active" >
+              <HashLink className="nav-link" id="home-link"
+                to="/community#top"
+              >Community
+                <span className="sr-only">(current)</span>
+              </HashLink>
+            </li>
           </ul>
 
 

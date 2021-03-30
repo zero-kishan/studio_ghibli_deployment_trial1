@@ -11,7 +11,7 @@ class MovieComponent extends Component {
 
         if (this.props.in_wishlist === true) {
             this.props.dispatch(wishlist_delete(this.props.wishlist))
-            alert("Removed from wishlist!")
+            alert("Removed from watchlist!")
         }
         else {
             this.props.dispatch(wishlist_add({
@@ -24,7 +24,7 @@ class MovieComponent extends Component {
                 date: new Date().toDateString()
             }))
 
-            alert("Added to wishlist!")
+            alert("Added to watchlist!")
         }
 
     }

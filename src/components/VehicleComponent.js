@@ -15,7 +15,7 @@ const VehicleComponent = (props) => {
 
       return (
         <>
-          {/* <div className='backgroundWall' style={{ backgroundImage: `url(${vehicledetails.image_url})` }} ></div> */}
+         
 
           <div className='container'>
 

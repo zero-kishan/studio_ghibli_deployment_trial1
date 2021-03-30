@@ -22,10 +22,12 @@ import Tshirt from './container/Tshirts';
 import Videogames from './container/Videogames';
 import AllMovie from './container/AllMovie';
 import AllCharacter from './container/AllCharacter';
-import AllLocation from './container/AllLocation'
+import AllLocation from './container/AllLocation';
+import Community from './container/Community'
 
 import Admin from './container/Admin'
 import MyPlan from './container/MyPlan';
+import User from './container/User';
 
 
 const Routing = () => {
@@ -54,6 +56,9 @@ const Routing = () => {
           <Route path="/allcharacters" component={AllCharacter}/>
           <Route path="/alllocations" component={AllLocation}/>
           <Route path="/myplan" component={MyPlan}/>
+          <Route path="/community" component={Community}/>
+          <Route path="/user/:id" component={User}/>
+
 
 
           <Footer />

@@ -31,7 +31,7 @@ class Shopping extends Component {
             tshirts_filtered: '',
             accessories: '',
             accessories_filtered: '',
-            videogames: '',
+            blu_rays: '',
             blu_rays_filtered: '',
             videogames: '',
             videogames_filtered: '',
@@ -157,7 +157,7 @@ class Shopping extends Component {
                 </div>
 
                 <center>
-                    <SearchBar category='Blu-Ray' filter={(input) => { this.changeHandler(input) }} />
+                    <SearchBar category='Blu-Ray' filter={(input) => { this.changeHandler6(input) }} />
                 </center>
                 <ShoppingBlurayGridDisplay blu_rayslist={this.state.blu_rays_filtered} />
 

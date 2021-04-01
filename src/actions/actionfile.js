@@ -2,7 +2,7 @@ const base_url ="https://ghibli-json-server.herokuapp.com"
 
 
 export function wishlist(){
-    const output = fetch(`${base_url}/films_playlist`,{method:'GET'})
+    const output = fetch('https://studio-ghibli-universe-backend.herokuapp.com/filmsPlaylist/view',{method:'GET'})
     .then((data) => data.json())
 
     return{
@@ -12,7 +12,7 @@ export function wishlist(){
 }
 
 export function wishlist_add(obj){
-    fetch(`${base_url}/films_playlist`, {
+    fetch('https://studio-ghibli-universe-backend.herokuapp.com/filmsPlaylist/add', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -33,7 +33,7 @@ export function wishlist_add(obj){
 }
 
 export function wishlist_delete(wishlist){
-    fetch(`${base_url}/films_playlist/${wishlist.id}`, {
+    fetch(`https://studio-ghibli-universe-backend.herokuapp.com/filmsPlaylist/delete/${wishlist._id}`, {
         method: 'DELETE',
         headers: {
             'Content-type': 'application/json'
@@ -52,7 +52,7 @@ export function wishlist_delete(wishlist){
 }
 
 export function shopping_wishlist(){
-    const output = fetch(`${base_url}/shopping_wishlist`,{method:'GET'})
+    const output = fetch(`https://studio-ghibli-universe-backend.herokuapp.com/shoppingWishlist/view`,{method:'GET'})
     .then((data) => data.json())
 
     return{
@@ -62,7 +62,7 @@ export function shopping_wishlist(){
 }
 
 export function shopping_wishlist_add(obj){
-    fetch(`${base_url}/shopping_wishlist`, {
+    fetch(`https://studio-ghibli-universe-backend.herokuapp.com/shoppingWishlist/add`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -73,7 +73,7 @@ export function shopping_wishlist_add(obj){
         
     })
     .then((data) => data.json())
-    const output = fetch(`${base_url}/shopping_wishlist`,{method:'GET'})
+    const output = fetch(`https://studio-ghibli-universe-backend.herokuapp.com/shoppingWishlist/view`,{method:'GET'})
     .then((data) => data.json())
     console.log(output,'inside action file')
     return{
@@ -83,7 +83,7 @@ export function shopping_wishlist_add(obj){
 }
 
 export function shopping_wishlist_delete(wishlist){
-    fetch(`${base_url}/shopping_wishlist/${wishlist.id}`, {
+    fetch(`https://studio-ghibli-universe-backend.herokuapp.com/shoppingWishlist/delete/${wishlist._id}`, {
         method: 'DELETE',
         headers: {
             'Content-type': 'application/json'
@@ -104,7 +104,7 @@ export function shopping_wishlist_delete(wishlist){
 
 
 export function following(){
-    const output = fetch(`${base_url}/following`,{method:'GET'})
+    const output = fetch(`https://studio-ghibli-universe-backend.herokuapp.com/following/view`,{method:'GET'})
     .then((data) => data.json())
 
     return{
@@ -114,7 +114,7 @@ export function following(){
 }
 
 export function following_add(obj){
-    fetch(`${base_url}/following`, {
+    fetch(`https://studio-ghibli-universe-backend.herokuapp.com/following/add`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -135,7 +135,7 @@ export function following_add(obj){
 }
 
 export function following_delete(wishlist){
-    fetch(`${base_url}/following/${wishlist.id}`, {
+    fetch(`https://studio-ghibli-universe-backend.herokuapp.com/following/delete/${wishlist._id}`, {
         method: 'DELETE',
         headers: {
             'Content-type': 'application/json'

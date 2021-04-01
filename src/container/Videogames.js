@@ -7,7 +7,9 @@ import VideogamesComponent from '../components/VideogamesComponent';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const videogames_url = 'https://ghibli-json-server.herokuapp.com/videogames';
+
+
+const videogames_url = 'https://studio-ghibli-universe-backend.herokuapp.com/videogame/view';
 
 
 class Videogames extends Component {
@@ -33,9 +35,9 @@ class Videogames extends Component {
     let in_wishlist = false;
     let shopping_wishlist = {};
     console.log(this.props.shopping_wishlist, 'inside render')
-    if (this.props.shopping_wishlist) {
+    if (this.props.shopping_wishlist && this.state.videogames[0]) {
       this.props.shopping_wishlist.map((item) => {
-        if (item.email === sessionStorage.getItem('email') && item.name === this.state.videogames.name) {
+        if (item.email === sessionStorage.getItem('email') && item.name === this.state.videogames[0].name) {
           in_wishlist = true;
           shopping_wishlist = item;
         }
@@ -49,7 +51,7 @@ class Videogames extends Component {
       <Header />
       <SideBar/>
       
-        <VideogamesComponent videogamesdetails={this.state.videogames} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
+        <VideogamesComponent videogamesdetails={this.state.videogames[0]} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
 
       </>
     )

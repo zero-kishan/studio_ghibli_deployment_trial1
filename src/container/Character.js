@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
 import VideoComponent from '../components/VideoComponent'
-const characters_url = 'https://ghibli-json-server.herokuapp.com/characters';
+const characters_url = 'https://studio-ghibli-universe-backend.herokuapp.com/character/view';
 
 
 class Character extends Component {
@@ -29,7 +29,7 @@ class Character extends Component {
       <Header />
       <SideBar/>
         {/* <Logout history={this.props.history} /> */}
-        <CharacterComponent characterdetails={this.state.character} />
+        <CharacterComponent characterdetails={this.state.character[0]} />
 
 
 

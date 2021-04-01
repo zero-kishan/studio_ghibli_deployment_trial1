@@ -13,12 +13,14 @@ import axios from 'axios';
 import './Unimain.css';
 
 
-const dvds_url = 'https://ghibli-json-server.herokuapp.com/dvd';
-const posters_url = 'https://ghibli-json-server.herokuapp.com/poster';
-const tshirts_url = 'https://ghibli-json-server.herokuapp.com/tshirt';
-const accessories_url = 'https://ghibli-json-server.herokuapp.com/accessories';
-const blu_rays_url = 'https://ghibli-json-server.herokuapp.com/blu_ray';
-const videogames_url = 'https://ghibli-json-server.herokuapp.com/videogames';
+const dvds_url = 'https://studio-ghibli-universe-backend.herokuapp.com/dvd/view';
+const posters_url = 'https://studio-ghibli-universe-backend.herokuapp.com/poster/view';
+const tshirts_url = 'https://studio-ghibli-universe-backend.herokuapp.com/t_shirt/view';
+const accessories_url = 'https://studio-ghibli-universe-backend.herokuapp.com/accessorie/view';
+const blu_rays_url = 'https://studio-ghibli-universe-backend.herokuapp.com/blu_ray/view';
+
+
+const videogames_url = 'https://studio-ghibli-universe-backend.herokuapp.com/videogame/view';
 class Shopping extends Component {
     constructor() {
         super()

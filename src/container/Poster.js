@@ -8,7 +8,7 @@ import VideoComponent from '../components/VideoComponent'
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const poster_url = 'https://ghibli-json-server.herokuapp.com/poster';
+const poster_url = 'https://studio-ghibli-universe-backend.herokuapp.com/poster/view';
 
 
 class Poster extends Component {
@@ -31,9 +31,9 @@ class Poster extends Component {
     let in_wishlist = false;
     let shopping_wishlist = {};
     console.log(this.props.shopping_wishlist, 'inside render')
-    if (this.props.shopping_wishlist) {
+    if (this.props.shopping_wishlist && this.state.poster[0]) {
       this.props.shopping_wishlist.map((item) => {
-        if (item.email === sessionStorage.getItem('email') && item.name === this.state.poster.name) {
+        if (item.email === sessionStorage.getItem('email') && item.name === this.state.poster[0].name) {
           in_wishlist = true;
           shopping_wishlist = item;
         }
@@ -47,7 +47,7 @@ class Poster extends Component {
       <Header />
       <SideBar/>
       
-        <PosterComponent posterdetails={this.state.poster} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist}/>
+        <PosterComponent posterdetails={this.state.poster[0]} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist}/>
 
 
 

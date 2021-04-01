@@ -55,7 +55,7 @@ const CharacterComponent = (props) => {
      
               return (
                   <>
-                      <div className='character_p_c'><HashLink to={film_route}><img className='character_film' src={item.image_url} alt='film_poster'></img></HashLink><br /><center>{item.name}</center></div>
+                      <div className='character_p_c'><HashLink to={film_route}><img className='character_film' src={item.image_url} alt='film_poster'></img></HashLink><br /><center style={{color:'wheat'}}>{item.name}</center></div>
                      
                   </>
               )
@@ -79,7 +79,7 @@ const CharacterComponent = (props) => {
             </div>
 
             <div className="chatacter_tile main" id='character _page_character'>
-                <h4 style={{ marginLeft: '20px' }}>Performed In </h4>
+                <h4 style={{ marginLeft: '20px', color:'#1daeed' }}>Performed In </h4>
                 <hr style={{ backgroundColor: '#687693', height: '2px', marginLeft: '10px', marginRight: '10px' }}></hr>
                 {character_tile(props.characterdetails)}
             </div>

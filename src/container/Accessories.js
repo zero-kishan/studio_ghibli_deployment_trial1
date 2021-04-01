@@ -8,7 +8,7 @@ import VideoComponent from '../components/VideoComponent'
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const accessories_url = 'https://ghibli-json-server.herokuapp.com/accessories';
+const accessories_url = 'https://studio-ghibli-universe-backend.herokuapp.com/accessorie/view';
 
 
 class Accessories extends Component {
@@ -32,9 +32,9 @@ class Accessories extends Component {
     let in_wishlist = false;
     let shopping_wishlist = {};
     console.log(this.props.shopping_wishlist, 'inside render')
-    if (this.props.shopping_wishlist) {
+    if (this.props.shopping_wishlist && this.state.accessories[0]) {
       this.props.shopping_wishlist.map((item) => {
-        if (item.email === sessionStorage.getItem('email') && item.name === this.state.accessories.name) {
+        if (item.email === sessionStorage.getItem('email') && item.name === this.state.accessories[0].name) {
           in_wishlist = true;
           shopping_wishlist = item;
         }
@@ -48,7 +48,7 @@ class Accessories extends Component {
       <Header />
       <SideBar/>
       
-        <AccessoriesComponent accessoriesdetails={this.state.accessories} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
+        <AccessoriesComponent accessoriesdetails={this.state.accessories[0]} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
 
 
 

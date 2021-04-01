@@ -7,7 +7,7 @@ import VideoComponent from '../components/VideoComponent'
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const location_url = 'https://ghibli-json-server.herokuapp.com/locations';
+const location_url = 'https://studio-ghibli-universe-backend.herokuapp.com/location/view';
 
 
 class Location extends Component {
@@ -29,7 +29,7 @@ class Location extends Component {
       <>
       <Header />
       <SideBar/>        {/* <Logout history={this.props.history} /> */}
-        <LocationComponent locationdetails={this.state.location} />
+        <LocationComponent locationdetails={this.state.location[0]} />
 
 
 

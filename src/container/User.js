@@ -9,7 +9,7 @@ import axios from 'axios';
 import './Unimain.css';
 
 const user_info = 'https://studio-ghibli-universe-backend.herokuapp.com/api/auth/userInfo';
-const films_playlist_url = "https://ghibli-json-server.herokuapp.com/films_playlist";
+const films_playlist_url = "https://studio-ghibli-universe-backend.herokuapp.com/filmsPlaylist/view";
 
 class User extends Component {
   constructor() {

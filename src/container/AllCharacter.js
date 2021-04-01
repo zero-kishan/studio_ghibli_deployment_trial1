@@ -13,10 +13,9 @@ import axios from 'axios';
 import './Unimain.css'
 
 
-const filmsUrl = 'https://ghibli-json-server.herokuapp.com/films';
-const characters_url = 'https://ghibli-json-server.herokuapp.com/characters';
-const locations_url = 'https://ghibli-json-server.herokuapp.com/locations';
-const vehicles_url = 'https://ghibli-json-server.herokuapp.com/vehicles';
+const filmsUrl = 'https://studio-ghibli-universe-backend.herokuapp.com/films/view';
+const characters_url = 'https://studio-ghibli-universe-backend.herokuapp.com/character/view';
+const locations_url = 'https://studio-ghibli-universe-backend.herokuapp.com/location/view';
 const televisions_url ='https://ghibli-json-server.herokuapp.com/television';
 const stageproductions_url ='https://ghibli-json-server.herokuapp.com/stageproductions'
 class AllCharacter extends Component {

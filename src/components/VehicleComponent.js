@@ -53,7 +53,7 @@ const VehicleComponent = (props) => {
               const film_route = '/films/'+ item.id + '#top'
               return (
                   <>
-                      <div className='vehicle_p_c'><HashLink to={film_route}><img className='vehicle_film' src={item.image_url} alt='film_poster'></img></HashLink><br /><center>{item.name}</center></div>
+                      <div className='vehicle_p_c'><HashLink to={film_route}><img className='vehicle_film' src={item.image_url} alt='film_poster'></img></HashLink><br /><center style={{ marginLeft: '20px', color:'#1daeed' }}><h6 style={{fontSize:'12px'}}>{item.name}</h6></center></div>
                   </>
               )
           })
@@ -76,7 +76,7 @@ const VehicleComponent = (props) => {
             </div>
 
             <div className="vehicle_tile main" id='vehicle _page_vehicle'>
-                <h4 style={{ marginLeft: '20px' }}>Appeared In </h4>
+                <h4 style={{ marginLeft: '20px', color:'#1daeed' }}>Appeared In </h4>
                 <hr style={{ backgroundColor: '#687693', height: '2px', marginLeft: '10px', marginRight: '10px' }}></hr>
                 {vehicle_tile(props.vehicledetails)}
             </div>

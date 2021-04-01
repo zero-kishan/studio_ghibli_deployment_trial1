@@ -26,7 +26,7 @@ const HomeCharacterGridDisplay = (props) => {
                 )
             }
             return characterslist.map((item,index) => {
-                const movieRoute ='/characters/'+'#top';
+                const movieRoute ='/characters/'+ item.id +'#top';
                 
                 if(index === 0){
                     return (

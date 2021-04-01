@@ -36,7 +36,7 @@ class FollowingDisplay extends Component {
 
 
                             <div className="col-md-4" style={{paddingTop:'20px', color: 'black'}}>
-                            <center><HashLink to={route}><h5 style={{color:'white'}} >{item.name}</h5></HashLink></center>
+                            <center><HashLink to={route}><h5 style={{color:'white'}} >{item.name}'s watchlist</h5></HashLink></center>
                             </div>
                             
                             

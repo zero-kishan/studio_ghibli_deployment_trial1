@@ -6,7 +6,7 @@ import MovieComponent from '../components/MovieComponent';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const filmsUrl = 'https://ghibli-json-server.herokuapp.com/films';
+const filmsUrl = 'https://studio-ghibli-universe-backend.herokuapp.com/films/view';
 //const wishlist_url = 'https://ghibli-json-server.herokuapp.com/wishlist';
 
 class Movie extends Component {
@@ -36,12 +36,14 @@ class Movie extends Component {
     //})
   }
   render() {
+    console.log(this.state, 'inside render here')
     let in_wishlist = false;
     let wishlist = {};
     console.log(this.props.wishlist, 'inside render')
-    if (this.props.wishlist) {
+    console.log(this.state.movie[0], 'inside render')
+    if (this.props.wishlist && this.state.movie[0]) {
       this.props.wishlist.map((item) => {
-        if (item.email === sessionStorage.getItem('email') && item.moviename === this.state.movie.title) {
+        if (item.email === sessionStorage.getItem('email') && item.moviename === this.state.movie[0].title) {
           in_wishlist = true;
           wishlist = item;
         }

@@ -6,9 +6,31 @@ import './SideBar.css'
 
 class SideBar extends React.Component {
 
-  // opennew = () => {
-  //   console.log('this is:', this);
-  // }
+  opennew1 = () => {
+    console.log('this is:', this);
+    window.open('https://en.wikipedia.org/wiki/List_of_Studio_Ghibli_works#Pre-Ghibli', '_blank')
+  }
+
+  opennew2 = () => {
+    console.log('this is:', this);
+    window.open('https://en.wikipedia.org/wiki/List_of_Studio_Ghibli_works#Significant_achievements', '_blank')
+  }
+
+  opennew3 = () => {
+    console.log('this is:', this);
+    window.open('https://en.wikipedia.org/wiki/List_of_Studio_Ghibli_works#Cooperative_works', '_blank')
+  }
+
+  opennew4 = () => {
+    console.log('this is:', this);
+    window.open('https://en.wikipedia.org/wiki/List_of_Studio_Ghibli_works#Contributive_works', '_blank')
+  }
+
+
+  opennew5 = () => {
+    console.log('this is:', this);
+    window.open('https://en.wikipedia.org/wiki/List_of_Studio_Ghibli_works#Distributive_works', '_blank')
+  }
   render() {
     return <div class="sidenav">
       <HashLink to="/home#top">Home<span className="sr-only">(current)</span></HashLink>
@@ -34,11 +56,7 @@ class SideBar extends React.Component {
       </HashLink>
       
 
-      <HashLink 
-        to="/home#Televisions_heading"
-      >TV-series
-            <span className="sr-only">(current)</span>
-      </HashLink>
+      
 
       <HashLink 
         to="/home#StageProductions_heading"
@@ -60,16 +78,21 @@ class SideBar extends React.Component {
 
       
 
-{/*       
-      <p onClick={this.opennew} >Pre-Ghibli</p>
-            <span className="sr-only">(current)</span>
       
-      {window.open('https://en.wikipedia.org/wiki/List_of_Studio_Ghibli_works#Pre-Ghibli', '_blank')}; */}
+      <h4 onClick={this.opennew1} >Pre-Ghibli <img src="https://img.icons8.com/officexs/16/000000/external-link.png"/></h4>
 
-      <a href="#contact">Coperative works</a>
-      <a href="#contact">Distributive works</a>
-      <a href="#contact">Contributive works</a>
-      <a href="#contact">Significant achievements</a>
+      <h4 onClick={this.opennew2} >Significant achievements <img src="https://img.icons8.com/officexs/16/000000/external-link.png"/></h4>
+
+      <h4 onClick={this.opennew3} >Coperative works <img src="https://img.icons8.com/officexs/16/000000/external-link.png"/></h4>
+
+      <h4 onClick={this.opennew4} >Contributive works <img src="https://img.icons8.com/officexs/16/000000/external-link.png"/></h4>
+
+      <h4 onClick={this.opennew5} >Distributive works <img src="https://img.icons8.com/officexs/16/000000/external-link.png"/></h4>
+
+      
+
+
+      
     </div>;
   }
 }

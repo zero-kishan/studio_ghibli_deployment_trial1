@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import axios from 'axios';
 import './Unimain.css'
-const filmsUrl = 'https://ghibli-json-server.herokuapp.com/films';
+const filmsUrl = 'https://studio-ghibli-universe-backend.herokuapp.com/films/view';
 class AllMovie extends Component {
     constructor() {
         super()

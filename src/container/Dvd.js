@@ -8,7 +8,7 @@ import DvdComponent from '../components/DvdComponent';
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const dvd_url = 'https://ghibli-json-server.herokuapp.com/dvd';
+const dvd_url = 'https://studio-ghibli-universe-backend.herokuapp.com/dvd/view';
 
 
 class Dvd extends Component {
@@ -33,9 +33,9 @@ class Dvd extends Component {
     let in_wishlist = false;
     let shopping_wishlist = {};
     console.log(this.props.shopping_wishlist, 'inside render')
-    if (this.props.shopping_wishlist) {
+    if (this.props.shopping_wishlist && this.state.dvd[0]) {
       this.props.shopping_wishlist.map((item) => {
-        if (item.email === sessionStorage.getItem('email') && item.name === this.state.dvd.name) {
+        if (item.email === sessionStorage.getItem('email') && item.name === this.state.dvd[0].name) {
           in_wishlist = true;
           shopping_wishlist = item;
         }
@@ -50,7 +50,7 @@ class Dvd extends Component {
       <Header />
       <SideBar/>
       
-        <DvdComponent dvddetails={this.state.dvd} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
+        <DvdComponent dvddetails={this.state.dvd[0]} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
 
 
 

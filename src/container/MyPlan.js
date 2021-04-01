@@ -7,7 +7,7 @@ import SideBar from '../components/SideBar'
 import MyPlanComponent from '../components/MyPlanComponent'
 import './Unimain.css'
 import VideoComponent from '../components/VideoComponent'
-// const orders_url = 'https://ghibli-json-server.herokuapp.com/characters';
+// const orders_url = 'https://studio-ghibli-universe-backend.herokuapp.com/character/view';
 const orders_url = "https://studio-ghibli-universe-backend.herokuapp.com/orders/history";
 
 

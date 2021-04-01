@@ -25,6 +25,8 @@ import AllCharacter from './container/AllCharacter';
 import AllLocation from './container/AllLocation';
 import Community from './container/Community'
 
+import ForgotPassword from './container/ForgotPassword'
+
 import Admin from './container/Admin'
 import MyPlan from './container/MyPlan';
 import User from './container/User';
@@ -58,6 +60,7 @@ const Routing = () => {
           <Route path="/myplan" component={MyPlan}/>
           <Route path="/community" component={Community}/>
           <Route path="/user/:id" component={User}/>
+          <Route path="/forgotpassword" component={ForgotPassword}/>
 
 
 

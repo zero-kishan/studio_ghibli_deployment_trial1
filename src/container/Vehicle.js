@@ -7,7 +7,7 @@ import VideoComponent from '../components/VideoComponent'
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const vehicle_url = 'https://ghibli-json-server.herokuapp.com/vehicles';
+const vehicle_url = 'https://studio-ghibli-universe-backend.herokuapp.com/vehicle/view';
 
 
 class Vehicle extends Component {
@@ -30,7 +30,7 @@ class Vehicle extends Component {
       <Header />
       <SideBar/>
         {/* <Logout history={this.props.history} /> */}
-        <VehicleComponent vehicledetails={this.state.vehicle} />
+        <VehicleComponent vehicledetails={this.state.vehicle[0]} />
 
 
 

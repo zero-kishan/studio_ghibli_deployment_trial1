@@ -15,10 +15,9 @@ class MovieComponent extends Component {
         }
         else {
             this.props.dispatch(wishlist_add({
-                id: Math.floor(Math.random() * 10000),
-                moviename: this.props.moviedetails.title,
-                movieid: this.props.moviedetails.id,
-                movieimage: this.props.moviedetails.image_url,
+                moviename: this.props.moviedetails[0].title,
+                movieid: this.props.moviedetails[0].id,
+                movieimage: this.props.moviedetails[0].image_url,
                 email: sessionStorage.getItem('email'),
                 username: sessionStorage.getItem('name'),
                 date: new Date().toDateString()
@@ -42,9 +41,9 @@ class MovieComponent extends Component {
 
             return (
                 <>
-                    <div className='backgroundWall' style={{ backgroundImage: `url(${moviedetails.back_wall})` }} ></div>
+                    <div className='backgroundWall' style={{ backgroundImage: `url(${moviedetails[0].back_wall})` }} ></div>
 
-                    <VideoComponent name={moviedetails.title} thumbnail={moviedetails.image_url} video={moviedetails.trailer_url} movie={moviedetails.video_url} />
+                    <VideoComponent name={moviedetails[0].title} thumbnail={moviedetails[0].image_url} video={moviedetails[0].trailer_url} movie={moviedetails[0].video_url} />
 
 
 
@@ -54,21 +53,21 @@ class MovieComponent extends Component {
 
                         <div className="row " style={{ margin: '80px 0px 80px 0px' }}>
                             <div className="col-xs-5 col-sm-6 col-lg-3">
-                                <div ><img className='movie_banner' src={moviedetails.image_url} alt='movie_poster' style={{ border: '3px solid #1daeed ' }}></img><br />
-                                    <div style={{ textAlign: 'left' }}>{moviedetails.title}</div>
+                                <div ><img className='movie_banner' src={moviedetails[0].image_url} alt='movie_poster' style={{ border: '3px solid #1daeed ' }}></img><br />
+                                    <div style={{ textAlign: 'left' }}>{moviedetails[0].title}</div>
                                 </div>
 
                             </div>
 
                             <div className="col-xs-7 col-sm-6 col-lg-9" style={{ marginTop: '20px' }}>
-                                <p>Directed by <b>{moviedetails.director} </b></p>
+                                <p>Directed by <b>{moviedetails[0].director} </b></p>
                                 <hr style={{ backgroundColor: '#687693', height: '0.01px' }}></hr>
-                                <div> {moviedetails.description}</div>
+                                <div> {moviedetails[0].description}</div>
                                 <br />
                                 <small>
-                                    Year of Production : <b> {moviedetails.release_date} </b>
-                                Rotten Tomatoes score : <b> {moviedetails.rt_score} </b> <br />
-                                Producer : <b> {moviedetails.producer} </b>
+                                    Year of Production : <b> {moviedetails[0].release_date} </b>
+                                Rotten Tomatoes score : <b> {moviedetails[0].rt_score} </b> <br />
+                                Producer : <b> {moviedetails[0].producer} </b>
                                 </small>
                                 {object}
                             </div>
@@ -81,12 +80,12 @@ class MovieComponent extends Component {
 
     character_tile = (moviedetails) => {
         if (moviedetails) {
-            return moviedetails.char.map((item) => {
+            return moviedetails[0].char.map((item) => {
                 const characterRoute = '/characters/' + item.id + '#top';
                 return (
                     <>
 
-                        <div className='movie_p_c '><HashLink to={characterRoute}><img className='movie_character' src={item.image_url} alt='movie_poster'></img></HashLink><br /><center>{item.name}</center></div>
+                        <div className='movie_p_c '><HashLink to={characterRoute}><img className='movie_character' src={item.image_url} alt='movie_poster'></img></HashLink><br /><center style={{color:'wheat'}}>{item.name}</center></div>
 
 
                     </>
@@ -96,11 +95,11 @@ class MovieComponent extends Component {
     }
     location_tile = (moviedetails) => {
         if (moviedetails) {
-            return moviedetails.loc.map((item) => {
+            return moviedetails[0].loc.map((item) => {
                 const locationRoute = '/locations/' + item.id + '#top';
                 return (
                     <>
-                        <div className='movie_p_c'><HashLink to={locationRoute}><img className='movie_character' src={item.image_url} alt='movie_poster'></img></HashLink><br /><center>{item.name}</center></div>
+                        <div className='movie_p_c'><HashLink to={locationRoute}><img className='movie_character' src={item.image_url} alt='movie_poster'></img></HashLink><br /><center style={{color:'wheat'}}>{item.name}</center></div>
 
                     </>
                 )
@@ -110,12 +109,12 @@ class MovieComponent extends Component {
 
     vehicle_tile = (moviedetails) => {
         if (moviedetails) {
-            if (moviedetails.veh.length > 0) {
-                return moviedetails.veh.map((item) => {
+            if (moviedetails[0].veh.length > 0) {
+                return moviedetails[0].veh.map((item) => {
                     const vehicleRoute = '/vehicles/' + item.id + '#top';
                     return (
                         <>
-                            <div className='movie_p_c'><HashLink to={vehicleRoute}><img className='movie_character' src={item.image_url} alt='movie_poster'></img></HashLink><br /><center>{item.name}</center></div>
+                            <div className='movie_p_c'><HashLink to={vehicleRoute}><img className='movie_character' src={item.image_url} alt='movie_poster'></img></HashLink><br /><center style={{color:'wheat'}}>{item.name}</center></div>
 
                         </>
                     )
@@ -126,7 +125,7 @@ class MovieComponent extends Component {
     }
     merch = (moviedetails) => {
         if (moviedetails) {
-            return moviedetails.video_buy.map((item) => {
+            return moviedetails[0].video_buy.map((item) => {
                 return (
                     <>
                         <div className="card mb-3 card movie_p_c" style={{ maxWidth: '370px', backgroundColor: '#1daeed' }}>
@@ -152,7 +151,7 @@ class MovieComponent extends Component {
 
     collectables = (moviedetails) => {
         if (moviedetails) {
-            return moviedetails.merch_buy.map((item) => {
+            return moviedetails[0].merch_buy.map((item) => {
                 return (
                     <>
                         <div className="card mb-3 card movie_p_c" style={{ maxWidth: '370px', backgroundColor: '#1daeed' }}>
@@ -176,6 +175,7 @@ class MovieComponent extends Component {
         }
     }
     render() {
+        console.log(this.props.moviedetails, 'moviedetails')
         return (
             <>
                 <div className='main'>
@@ -195,7 +195,7 @@ class MovieComponent extends Component {
                     </div>
 
 
-                    <h4 id='movie_page_character' style={{ marginLeft: '20px', paddingTop: '80px' }}>Characters</h4>
+                    <h4 id='movie_page_character' style={{ marginLeft: '20px', paddingTop: '80px', color:'#1daeed' }}>Characters</h4>
                     <hr style={{ backgroundColor: '#687693', height: '2px', marginLeft: '10px', marginRight: '10px' }}></hr>
                     <div className="character_tile scrollmenu" >
                         {this.character_tile(this.props.moviedetails)}
@@ -204,14 +204,14 @@ class MovieComponent extends Component {
                     {/* <center><a class="movie_categories_link" href="#movie_page_navbar"><button type="button" style={{ backgroundColor: '#687693', color: '#cccdb4', fontFamily: 'Times New Roman' }} class="btn">Back <img alt="up" src="https://img.icons8.com/plumpy/24/000000/circled-up-2.png" /> to categories</button></a ></center> */}
 
                     <div className="character_tile" >
-                        <h4 id='movie_page_location' style={{ marginLeft: '20px', paddingTop: '80px' }}>Locations</h4>
+                        <h4 id='movie_page_location' style={{ marginLeft: '20px', paddingTop: '80px', color:'#1daeed' }}>Locations</h4>
                         <hr style={{ backgroundColor: '#687693', height: '2px', marginLeft: '10px', marginRight: '10px' }}></hr>
                         {this.location_tile(this.props.moviedetails)}
                         {/* <center><a class="movie_categories_link" href="#movie_page_navbar"><button type="button" style={{ backgroundColor: '#687693', color: '#cccdb4', fontFamily: 'Times New Roman' }} class="btn">Back <img alt="up" src="https://img.icons8.com/plumpy/24/000000/circled-up-2.png" /> to categories</button></a ></center> */}
                     </div>
 
                     <div className="character_tile" id='movie_page_vehicle'>
-                        <h4 style={{ marginLeft: '20px', paddingTop: '80px' }}>Vehicles</h4>
+                        <h4 style={{ marginLeft: '20px', paddingTop: '80px', color:'#1daeed' }}>Vehicles</h4>
                         <hr style={{ backgroundColor: '#687693', height: '2px', marginLeft: '10px', marginRight: '10px' }}></hr>
                         {this.vehicle_tile(this.props.moviedetails)}
                         {/* <center><a class="movie_categories_link" href="#movie_page_navbar"><button type="button" style={{ backgroundColor: '#687693', color: '#cccdb4', fontFamily: 'Times New Roman' }} class="btn">Back <img alt="up" src="https://img.icons8.com/plumpy/24/000000/circled-up-2.png" /> to categories</button></a ></center> */}

@@ -9,7 +9,7 @@ import VideoComponent from '../components/VideoComponent'
 import Header from '../components/Header';
 import SideBar from '../components/SideBar'
 import './Unimain.css'
-const blu_ray_url = 'https://ghibli-json-server.herokuapp.com/blu_ray';
+const blu_ray_url = 'https://studio-ghibli-universe-backend.herokuapp.com/blu_ray/view';
 
 
 class Bluray extends Component {
@@ -32,9 +32,10 @@ class Bluray extends Component {
     let in_wishlist = false;
     let shopping_wishlist = {};
     console.log(this.props.shopping_wishlist, 'inside render')
-    if (this.props.shopping_wishlist) {
+    if (this.props.shopping_wishlist && this.state.blu_ray[0]) {
+
       this.props.shopping_wishlist.map((item) => {
-        if (item.email === sessionStorage.getItem('email') && item.name === this.state.blu_ray.name) {
+        if (item.email === sessionStorage.getItem('email') && item.name === this.state.blu_ray[0].name) {
           in_wishlist = true;
           shopping_wishlist = item;
         }
@@ -48,7 +49,7 @@ class Bluray extends Component {
       <Header />
       <SideBar/>
       
-        <BlurayComponent blu_raydetails={this.state.blu_ray} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
+        <BlurayComponent blu_raydetails={this.state.blu_ray[0]} in_wishlist={in_wishlist} shopping_wishlist={shopping_wishlist} />
 
       </>
     )

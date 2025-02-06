@@ -69,4 +69,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-https://jamkuportal-hosted.firebaseapp.com/__/auth/action?apiKey=AIzaSyDhtGX-h4iguU2c8CJRza6UztfdTiHW3HI&mode=signIn&oobCode=kP-IRyojawVcPph3O6y1_rO9q_-n-J-GQq1qZln_fdsAAAGU2vERHw&continueUrl=https://jamku.adani.com/a/%23/login?method%3Demaillink%26email%3Ddaskishan.ms@gmail.com&lang=en
+ghp_1o1WqxK5Jg1Nzhgq2X18D1qr790FtL3KDKFV
